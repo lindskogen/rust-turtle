@@ -1,0 +1,22 @@
+set_color 226 92 51
+forwards
+turn_left
+forwards
+drop_pen
+forwards
+set_color 237 147 11
+forwards
+forwards
+set_color 234 200 81
+forwards
+forwards
+set_color 84 158 105
+forwards
+lift_pen
+forwards
+turn_right
+forwards
+set_color 47 81 81
+drop_pen
+forwards
+forwards
