@@ -1,8 +1,8 @@
 set_color 226 92 51
+drop_pen
 forwards
 turn_left
 forwards
-drop_pen
 forwards
 set_color 237 147 11
 forwards
@@ -18,5 +18,25 @@ turn_right
 forwards
 set_color 47 81 81
 drop_pen
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+forwards
+turn_right
+set_color 237 147 11
+forwards
+turn_right
+forwards
+forwards
+forwards
+forwards
 forwards
 forwards

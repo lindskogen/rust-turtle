@@ -24,6 +24,14 @@ fn draw_position<G: Graphics>(
   rectangle.draw(dims, &draw_state::DrawState::default(), transform, graphics);
 }
 
+fn get_numeric_direction(instruction: &Instruction) -> i32 {
+  if *instruction == Instruction::Forwards {
+    1
+  } else {
+    -1
+  }
+}
+
 pub fn draw_frame<G: Graphics>(program: &Vec<Instruction>, transform: Matrix2d, graphics: &mut G) {
   clear([1.0; 4], graphics);
   let mut current_direction = Direction::South;
@@ -36,19 +44,18 @@ pub fn draw_frame<G: Graphics>(program: &Vec<Instruction>, transform: Matrix2d, 
       Instruction::Forwards | Instruction::Backwards => {
         match current_direction {
           Direction::East => {
-            current_position.0 += 1;
+            current_position.0 += get_numeric_direction(next_instruction);
           }
           Direction::West => {
-            current_position.0 -= 1;
+            current_position.0 -= get_numeric_direction(next_instruction);
           }
           Direction::South => {
-            current_position.1 += 1;
+            current_position.1 += get_numeric_direction(next_instruction);
           }
           Direction::North => {
-            current_position.0 -= 1;
+            current_position.1 -= get_numeric_direction(next_instruction);
           }
         }
-
         if current_pen {
           draw_position(current_position, color, transform, graphics);
         }

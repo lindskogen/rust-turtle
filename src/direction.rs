@@ -1,6 +1,6 @@
 use super::instructions::Instruction;
 
-#[derive(Eq, PartialEq)]
+#[derive(Eq, PartialEq, Debug)]
 pub enum Direction {
   North,
   East,

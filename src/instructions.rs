@@ -1,6 +1,6 @@
 use std::io::{self, BufRead};
 
-#[derive(Eq, PartialEq)]
+#[derive(Eq, PartialEq, Debug)]
 pub enum Instruction {
   Forwards,
   Backwards,
