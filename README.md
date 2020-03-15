@@ -7,3 +7,7 @@ Source: https://www.dreamincode.net/forums/topic/78802-martyr2s-mega-project-ide
 You can see the output of the last commit below:
 
 ![](./resources/output.png)
+
+## Running
+
+    cargo run < test_input
