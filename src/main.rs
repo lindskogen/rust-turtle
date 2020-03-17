@@ -1,7 +1,6 @@
 use graphics_buffer::{RenderBuffer, IDENTITY};
 use piston_window::*;
 
-mod direction;
 mod instructions;
 use instructions::parse_file;
 mod gfx;

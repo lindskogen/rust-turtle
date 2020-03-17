@@ -2,10 +2,10 @@ use std::io::{self, BufRead};
 
 #[derive(Eq, PartialEq, Debug)]
 pub enum Instruction {
-  Forwards,
-  Backwards,
-  TurnRight,
-  TurnLeft,
+  Forwards(u32),
+  Backwards(u32),
+  TurnRight(u32),
+  TurnLeft(u32),
   DropPen,
   LiftPen,
   SetColor(u8, u8, u8),
@@ -25,13 +25,23 @@ fn parse_color(color: &str) -> Option<Instruction> {
   ))
 }
 
+fn parse_u32(string: &str) -> Option<u32> {
+  let params: Vec<_> = string
+    .split_whitespace()
+    .skip(1)
+    .filter_map(|num| num.parse::<u32>().ok())
+    .collect();
+
+  Some(params[0])
+}
+
 fn parse_instruction(string: &str) -> Option<Instruction> {
   match string.split_whitespace().nth(0)? {
-    "forwards" => Some(Instruction::Forwards),
+    "forwards" => parse_u32(&string[..]).map(Instruction::Forwards),
+    "backwards" => parse_u32(&string[..]).map(Instruction::Backwards),
+    "turn_right" => parse_u32(&string[..]).map(Instruction::TurnRight),
+    "turn_left" => parse_u32(&string[..]).map(Instruction::TurnLeft),
     "drop_pen" => Some(Instruction::DropPen),
-    "backwards" => Some(Instruction::Backwards),
-    "turn_right" => Some(Instruction::TurnRight),
-    "turn_left" => Some(Instruction::TurnLeft),
     "lift_pen" => Some(Instruction::LiftPen),
     "set_color" => parse_color(&string[..]),
     _ => None,

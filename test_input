@@ -1,42 +1,24 @@
+turn_right 90
 set_color 226 92 51
 drop_pen
-forwards
-turn_left
-forwards
-forwards
+forwards 20
+turn_right 20
+forwards 30
 set_color 237 147 11
-forwards
-forwards
+forwards 50
 set_color 234 200 81
-forwards
-forwards
+forwards 10
 set_color 84 158 105
-forwards
+forwards 30
 lift_pen
-forwards
-turn_right
-forwards
+forwards 20
+turn_right 45
+forwards 20
 set_color 47 81 81
 drop_pen
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
-turn_right
+forwards 40
+turn_right 90
 set_color 237 147 11
-forwards
-turn_right
-forwards
-forwards
-forwards
-forwards
-forwards
-forwards
+forwards 40
+turn_right 45
+forwards 30
