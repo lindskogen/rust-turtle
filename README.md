@@ -10,4 +10,4 @@ You can see the output of the last commit below:
 
 ## Running
 
-    cargo run < test_input
+    cargo run < test_input3

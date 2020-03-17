@@ -54,9 +54,9 @@ pub fn draw_frame<G: Graphics>(program: &Vec<Instruction>, transform: Matrix2d, 
   }
 }
 
-fn move_steps_in_direction((x, y): Coord, direction: Scalar, steps: u32) -> Coord {
+fn move_steps_in_direction((x, y): Coord, direction: Scalar, steps: Scalar) -> Coord {
   (
-    x + direction.to_radians().cos() * steps as Scalar,
-    y + direction.to_radians().sin() * steps as Scalar,
+    x + direction.to_radians().cos() * steps,
+    y + direction.to_radians().sin() * steps,
   )
 }

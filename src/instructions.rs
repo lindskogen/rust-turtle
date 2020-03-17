@@ -1,11 +1,11 @@
 use std::io::{self, BufRead};
 
-#[derive(Eq, PartialEq, Debug)]
+#[derive(Debug)]
 pub enum Instruction {
-  Forwards(u32),
-  Backwards(u32),
-  TurnRight(u32),
-  TurnLeft(u32),
+  Forwards(f64),
+  Backwards(f64),
+  TurnRight(f64),
+  TurnLeft(f64),
   DropPen,
   LiftPen,
   SetColor(u8, u8, u8),
@@ -25,11 +25,11 @@ fn parse_color(color: &str) -> Option<Instruction> {
   ))
 }
 
-fn parse_u32(string: &str) -> Option<u32> {
+fn parse_u32(string: &str) -> Option<f64> {
   let params: Vec<_> = string
     .split_whitespace()
     .skip(1)
-    .filter_map(|num| num.parse::<u32>().ok())
+    .filter_map(|num| num.parse::<f64>().ok())
     .collect();
 
   Some(params[0])
